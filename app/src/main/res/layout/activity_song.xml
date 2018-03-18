@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nelson.karaoke.songActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="411dp"
+                android:background="#263238">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView_lyrics"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="27dp"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tiempoInicial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:00"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tiempoTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:text="00:00"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/play_button"
+                        android:layout_width="@android:dimen/notification_large_icon_width"
+                        android:layout_height="@android:dimen/notification_large_icon_width"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="1"
+                        android:background="@drawable/playbutton"
+                        android:onClick="play_stop_song"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/pauseButton"
+                        android:layout_width="@android:dimen/notification_large_icon_width"
+                        android:layout_height="@android:dimen/notification_large_icon_height"
+                        android:layout_alignLeft="@+id/play_button"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignStart="@+id/play_button"
+                        android:background="@drawable/pause"
+                        android:onClick="play_stop_song"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/next_button"
+                        android:layout_width="@android:dimen/notification_large_icon_height"
+                        android:layout_height="@android:dimen/notification_large_icon_width"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="47dp"
+                        android:layout_marginRight="47dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/next_button"
+                        android:onClick="change_next_song"
+                        tools:layout_editor_absoluteX="248dp"
+                        tools:layout_editor_absoluteY="57dp" />
+
+                    <Button
+                        android:id="@+id/back_button"
+                        android:layout_width="@android:dimen/notification_large_icon_height"
+                        android:layout_height="@android:dimen/notification_large_icon_width"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginEnd="47dp"
+                        android:layout_marginRight="47dp"
+                        android:layout_toLeftOf="@+id/play_button"
+                        android:layout_toStartOf="@+id/play_button"
+                        android:layout_weight="1"
+                        android:background="@drawable/back_button"
+                        android:onClick="change_previous_song" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
